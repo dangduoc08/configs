@@ -1,0 +1,280 @@
+{
+  "include": [
+    "src/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+
+  /*
+    Import 1 file config khác
+  */
+  // "extends": "./tsconfig.base",
+
+  // "compileOnSave": true,
+  "compilerOptions": {
+    /*
+      Tạo file buildinfo lưu thông tin về  cấu trúc dự án
+      lần biên dịch sau khi sử dụng thuộc tính 'incremental' hoặc flag '--incremental'
+      bộ biên dịch sẽ đọc file buildinfo để giảm thời gian cho việc kiểm tra kiểu dữ liệu
+      và thực hiện thay đổi nhanh hơn
+    */
+    "incremental": true,
+
+    /*
+      Chỉ định đường dẫn thư mục chứa file buildinfo
+    */
+    // "tsBuildInfoFile": "./",
+
+    /*
+      Chỉ định phiên bản ECMAScript:
+      'ES3' (mặc định)
+      'ES5'
+      'ES2015'
+      'ES2016'
+      'ES2017'
+      'ES2018'
+      'ES2019'
+      'ESNEXT' (lấy phiên bản ECMAScript cao nhất mà phiên bản Typescipt được cài trên máy tính hiện tại hỗ trợ)
+    */
+    "target": "ES2019",
+
+    /*
+      Chỉ định đạng các dạng thế hệ 'module':
+      'node'
+      'commonjs'
+      'amd'
+      'system'
+      'umd'
+      'es2015'
+      'ESNext'
+    */
+    "module": "commonjs",
+
+    /*
+      Cấu hình đường dẫn thư mục chứa source Typescript cần biên dịch
+    */
+    // "rootDir": "./",
+
+    /*
+      Cấu hình đường dẫn thư mục chứa source Javascript sau khi biên dịch xong
+    */
+    "outDir": "build",
+
+    /*
+      Gom tất cả các output file thành 1 file, chỉ hỗ trợ module:
+      'system'
+      'amd'
+    */
+    // "outFile": "./",
+
+    /*
+      Tạo ra file '.d.ts' tương ứng
+    */
+    // "declaration": true,                   
+
+    /*
+      Tạo ra sourcemap cho mỗi file '.d.ts' tương ứng
+    */
+    // "declarationMap": true,
+
+    /*
+      Tạo ra sourcemap cho mỗi file '.ts' tương ứng
+    */
+    "sourceMap": true,
+
+    /*
+      Tạo ra sourcemap nằm trong 1 file
+    */
+    // "inlineSourceMap": true,
+
+    /*
+      Nhúng source vào trong file map
+    */
+    // "inlineSources": true,
+
+    /*
+      Bật tất cả tùy chọn chế độ kiểm tra nghiêm ngặt kiểu dữ liệu:
+      'noImplicitAny'
+      'noImplicitThis'
+      'strictBindCallApply'
+      'strictNullChecks'
+      'strictFunctionTypes'
+      'strictPropertyInitialization'
+    */
+    "strict": true,
+
+    /*
+      Kiểm tra đối với các biểu thức hoặc khai báo biến tiềm ẩn kiểu dữ liệu 'any'
+    */
+    "noImplicitAny": true,
+
+    /*
+      Kiểm tra đối với con trỏ 'this' tiềm ẩn kiểu dữ liệu 'any'
+    */
+    "noImplicitThis": true,
+
+    /*
+      Kiểm tra các phương thức:
+      'bind'
+      'call'
+      'apply'
+      của hàm
+    */
+    "strictBindCallApply": true,
+
+    /*
+      Kiểm tra đới với giá trị null
+    */
+    "strictNullChecks": true,
+
+    /*
+      Kiểm tra kiểu dữ liệu của đối số
+    */
+    "strictFunctionTypes": true,
+
+    /*
+      Kiểm tra nghiêm ngặt khi khởi tạo thuộc tính cho lớp đối tượng.
+      Nếu có khái báo thuộc tính thì hàm 'constructor' phải truyền thuộc tính đó
+      hoặc dùng cách khai báo thuộc tinh optional, sử dụng dấu '?'
+    */
+    "strictPropertyInitialization": true,
+
+    /*
+      Thêm 'use strict' vào từng file sau khị biên dịch
+    */
+    "alwaysStrict": true,
+
+    /*
+      Biến khai báo phải sử dụng
+    */
+    "noUnusedLocals": true,
+
+    /*
+      Đối số trong hàm phải sử dụng
+    */
+    // "noUnusedParameters": true,
+
+    /*
+      Nếu hàm có rẽ nhánh hoặc câu điều kiện, nếu 1 nhánh có trả về giá trị
+      thì các nhánh khác cũng phải trả về giá trị
+    */
+    "noImplicitReturns": true,
+
+    /*
+      'Switch' - 'Case' phải có break
+    */
+    "noFallthroughCasesInSwitch": true,
+
+    /*
+      Cho phép tương tác giữa CommonJS Modules với ES Modules
+    */
+    "esModuleInterop": true,
+
+    /*
+      Danh sách các thư viện sẽ được bao gồm trong qúa trình biên dịch:
+      'ES5'
+      'ES6'
+      'ES2015'
+      'ES7'
+      'ES2016'
+      'ES2017'
+      'ES2018'
+      'ESNext'
+      'DOM'
+      'DOM.Iterable'
+      'WebWorker'
+      'ScriptHost'
+      'ES2015.Core'
+      'ES2015.Collection'
+      'ES2015.Generator'
+      'ES2015.Iterable'
+      'ES2015.Promise'
+      'ES2015.Proxy'
+      'ES2015.Reflect'
+      'ES2015.Symbol'
+      'ES2015.Symbol.WellKnown'
+      'ES2016.Array.Include'
+      'ES2017.object'
+      'ES2017.Intl'
+      'ES2017.SharedMemory'
+      'ES2017.String'
+      'ES2017.TypedArrays'
+      'ES2018.Intl'
+      'ES2018.Promise'
+      'ES2018.RegExp'
+      'ESNext.AsyncIterable'
+      'ESNext.Array'
+      'ESNext.Intl'
+      'ESNext.Symbol'
+    */
+    // "lib": [],
+
+    /*
+      Cho phép biên dịch cả file Javascript
+    */
+    "allowJs": true,
+
+    /*
+      Báo lỗi trong file '.js'
+    */
+    "checkJs": true,
+
+    /*
+      Chỉ định thế hệ mã JSX:
+      'preserve'
+      'react'
+      'react-native'
+    */
+    // "jsx": "preserve",
+
+    /*
+      Bỏ comment sau khi biên dịch
+    */
+    "removeComments": true,
+
+    /*
+      Sử dụng khi cần kiểm tra kiểu dữ liệu mà không cần biên dịch
+    */
+    // "noEmit": false,
+
+    /*
+      Sử dụng cùng thư viện 'tslib'
+      Khi sử dụng ECMAScript phiên bản cũ đối với các tính năng 'ES' mới
+      bộ biên dịch sẽ tạo ra rất nhiều hàm 'helper' trùng lặp
+      tslib giúp gom những hàm 'helper' vào 1 module 'tslib'
+      giúp giảm kích thước file
+    */
+    // "importHelpers": true,
+
+    /*
+      Bổ sung tính năng:
+      'for-of'
+      'spread syntax'
+      'destructuring'
+      khi sử dụng ECMAScript 'ES3', 'ES5'
+    */
+    // "downlevelIteration": true,
+
+    /*
+      Bật tính năng 'decorators' cho ES7
+    */
+    "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
+
+    // "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
+    // "composite": true,                     /* Enable project compilation */
+    // "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
+    // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
+    // "typeRoots": [],                       /* List of folders to include type definitions from. */
+    // "types": [],                           /* Type declaration files to be included in compilation. */
+    // "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+    // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
+    // "allowUmdGlobalAccess": true,          /* Allow accessing UMD globals from modules. */
+    // "sourceRoot": "",                      /* Specify the location where debugger should locate TypeScript files instead of source locations. */
+    // "mapRoot": "",                         /* Specify the location where debugger should locate map files instead of generated locations. */
+    // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
+    // "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+  }
+}
