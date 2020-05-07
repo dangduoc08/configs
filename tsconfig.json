@@ -1,9 +1,10 @@
 {
   "include": [
-    "src/*.ts"
+    "src/**/*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts"
   ],
 
   /*
@@ -261,8 +262,17 @@
     */
     "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
 
-    // "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
-    // "composite": true,                     /* Enable project compilation */
+    /*
+      Bật tính năng này lên mỗi file typescript phải export hoặc import
+      tsc sẽ coi mỗi file *.ts là 1 module
+    */
+    // "isolatedModules": true,
+
+    /*
+      Tạo ra file *.d.ts chứa thông tin về kiểu các kiểu dữ liệu liên quan của từng file 
+    */
+    // "composite": true,
+    
     // "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
     // "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
     // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
