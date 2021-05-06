@@ -286,5 +286,13 @@
     // "mapRoot": "",                         /* Specify the location where debugger should locate map files instead of generated locations. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
     // "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+
+    /*
+      Ex: interface Person { name: string };
+          const doe: Person = { name: 'John Doe' };
+          doe['age'] = 10;
+      => False = Error
+    */
+    "suppressImplicitAnyIndexErrors": false
   }
 }
